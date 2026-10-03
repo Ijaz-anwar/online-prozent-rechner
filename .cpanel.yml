@@ -1,0 +1,21 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/onlinepr/german-tool/
+    - /bin/mkdir -p $DEPLOYPATH/server
+    - /bin/cp -R server/src $DEPLOYPATH/server/
+    - /bin/cp server/package.json $DEPLOYPATH/server/
+    - /bin/cp server/package-lock.json $DEPLOYPATH/server/
+    - /bin/mkdir -p $DEPLOYPATH/client
+    - /bin/cp -R client/dist $DEPLOYPATH/client/
+    - /bin/cp -R client/src $DEPLOYPATH/client/
+    - /bin/cp -R client/public $DEPLOYPATH/client/
+    - /bin/cp client/index.html $DEPLOYPATH/client/
+    - /bin/cp client/package.json $DEPLOYPATH/client/
+    - /bin/cp client/package-lock.json $DEPLOYPATH/client/
+    - /bin/cp client/vite.config.js $DEPLOYPATH/client/
+    - /bin/cp package.json $DEPLOYPATH/
+    - /bin/cp package-lock.json $DEPLOYPATH/
+    - /bin/cp README.md $DEPLOYPATH/
+    - /bin/mkdir -p $DEPLOYPATH/tmp
+    - /bin/touch $DEPLOYPATH/tmp/restart.txt
