@@ -5,6 +5,7 @@ import CalculatorInput from '../CalculatorInput.jsx';
 import CalculatorResult from '../CalculatorResult.jsx';
 import ActionToolbar from '../../common/ActionToolbar.jsx';
 import { calculatePricePercentage } from '../../../utils/calculations/percentageCalculations.js';
+import './CalculatorTools.css';
 
 export default function PricePercentageCalculator({
   onSaveHistory,
@@ -85,50 +86,38 @@ export default function PricePercentageCalculator({
     >
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
         {/* Mode Selector and Currency */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div className="calc-mode-toolbar">
           {/* Mode Tabs */}
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '0.35rem',
-            background: 'var(--bg-card-subtle, #f5f7fa)',
-            padding: '0.35rem',
-            borderRadius: 'var(--border-radius-md, 10px)',
-            border: '1px solid var(--border-color, #e0e4ec)',
-            flex: 1
-          }}>
+          <div className="calc-mode-tabs">
             <button
               type="button"
-              className={`btn ${mode === 'discount' ? 'btn-primary' : 'btn-secondary'}`}
+              className={`calc-mode-btn ${mode === 'discount' ? 'active' : ''}`}
               onClick={() => {
                 setMode('discount');
                 setValueB('20');
               }}
-              style={{ fontSize: '0.85rem', padding: '0.45rem 0.75rem', display: 'flex', alignItems: 'center', gap: '0.35rem', flex: 1, justifyContent: 'center' }}
             >
               <TrendingDown size={14} />
               <span>Rabatt (-%)</span>
             </button>
             <button
               type="button"
-              className={`btn ${mode === 'increase' ? 'btn-primary' : 'btn-secondary'}`}
+              className={`calc-mode-btn ${mode === 'increase' ? 'active' : ''}`}
               onClick={() => {
                 setMode('increase');
                 setValueB('19');
               }}
-              style={{ fontSize: '0.85rem', padding: '0.45rem 0.75rem', display: 'flex', alignItems: 'center', gap: '0.35rem', flex: 1, justifyContent: 'center' }}
             >
               <TrendingUp size={14} />
               <span>Preiserhöhung (+%)</span>
             </button>
             <button
               type="button"
-              className={`btn ${mode === 'compare' ? 'btn-primary' : 'btn-secondary'}`}
+              className={`calc-mode-btn ${mode === 'compare' ? 'active' : ''}`}
               onClick={() => {
                 setMode('compare');
                 setValueB('120');
               }}
-              style={{ fontSize: '0.85rem', padding: '0.45rem 0.75rem', display: 'flex', alignItems: 'center', gap: '0.35rem', flex: 1, justifyContent: 'center' }}
             >
               <ArrowLeftRight size={14} />
               <span>2 Preise vergleichen</span>
@@ -136,14 +125,13 @@ export default function PricePercentageCalculator({
           </div>
 
           {/* Currency Toggle */}
-          <div style={{ display: 'flex', gap: '0.25rem' }}>
+          <div className="calc-currency-bar">
             {['€', '$', '£'].map((curr) => (
               <button
                 key={curr}
                 type="button"
-                className={`btn ${currency === curr ? 'btn-primary' : 'btn-secondary'}`}
+                className={`calc-currency-btn ${currency === curr ? 'active' : ''}`}
                 onClick={() => setCurrency(curr)}
-                style={{ minWidth: '38px', padding: '0.45rem 0.6rem', fontWeight: 'bold' }}
                 aria-label={`Währung ${curr} auswählen`}
               >
                 {curr}
