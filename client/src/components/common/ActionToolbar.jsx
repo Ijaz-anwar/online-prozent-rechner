@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { RotateCcw, Share2, Check, SlidersHorizontal } from 'lucide-react';
+import './ActionToolbar.css';
 
 export default function ActionToolbar({
   onReset,
@@ -26,22 +27,12 @@ export default function ActionToolbar({
   };
 
   return (
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      flexWrap: 'wrap',
-      gap: '0.75rem',
-      marginTop: '1.25rem',
-      paddingTop: '1rem',
-      borderTop: '1px solid var(--border-color)'
-    }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+    <div className="action-toolbar">
+      <div className="action-toolbar-buttons">
         <button
           type="button"
           onClick={onReset}
           className="btn btn-secondary"
-          style={{ padding: '0.45rem 0.85rem', fontSize: '0.85rem' }}
           title="Eingaben zurücksetzen"
         >
           <RotateCcw size={15} />
@@ -52,7 +43,6 @@ export default function ActionToolbar({
           type="button"
           onClick={handleShareClick}
           className="btn btn-secondary"
-          style={{ padding: '0.45rem 0.85rem', fontSize: '0.85rem' }}
           title="Berechnungslink kopieren"
         >
           {copiedLink ? <Check size={15} style={{ color: 'var(--accent-green)' }} /> : <Share2 size={15} />}
@@ -61,22 +51,16 @@ export default function ActionToolbar({
       </div>
 
       {showDecimals && onDecimalsChange && (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-          <SlidersHorizontal size={14} />
-          <span>Nachkommastellen:</span>
+        <div className="action-toolbar-decimals">
+          <span className="action-toolbar-label">
+            <SlidersHorizontal size={14} />
+            <span>Nachkommastellen:</span>
+          </span>
           <select
             value={decimals}
             onChange={(e) => onDecimalsChange(Number(e.target.value))}
-            style={{
-              padding: '0.3rem 0.6rem',
-              borderRadius: 'var(--border-radius-sm)',
-              border: '1px solid var(--border-color)',
-              backgroundColor: 'var(--bg-input)',
-              color: 'var(--text-main)',
-              fontWeight: 600,
-              fontSize: '0.85rem',
-              cursor: 'pointer'
-            }}
+            className="action-toolbar-select"
+            aria-label="Anzahl Nachkommastellen wählen"
           >
             <option value={0}>0 (Ganze Zahlen)</option>
             <option value={1}>1 Dezimalstelle (0,1)</option>

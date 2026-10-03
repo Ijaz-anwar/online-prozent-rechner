@@ -209,8 +209,8 @@ export default function HomePage({ onSaveHistory }) {
   return (
     <div className="hp">
       <SEOHead
-        title="Prozent Rechner Online – Kostenlos, schnell & präzise Prozente berechnen"
-        description="Prozent Rechner Online – schnell, einfach und genau. Berechnen Sie Prozentwert, Prozentsatz, Grundwert, Dreisatz, 19% MwSt, Rabatte und Prozent rückwärts mit Schritt-für-Schritt Rechenweg."
+        title="Prozent Rechner Online – Prozent einfach, schnell und richtig berechnen"
+        description="Prozent Rechner Online: Prozente einfach, schnell und richtig berechnen – mit Rabatt, Preis, Bruch, Mehrwertsteuer, Dreisatz und Prozentrechnung."
         canonicalUrl="/"
         schemaData={schemaData}
       />

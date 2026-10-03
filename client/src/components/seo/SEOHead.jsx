@@ -2,8 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 export default function SEOHead({
-  title = 'Prozent Rechner – Kostenloser Online-Prozentrechner',
-  description = 'Kostenloser Online-Prozentrechner: Prozentwert, Prozentsatz, Grundwert, Dreisatz, 19% MwSt, Rabatt und Prozent rückwärts rechnen mit sofortigem Rechenweg.',
+  title = 'Prozent Rechner Online – Prozent einfach, schnell und richtig berechnen',
+  description = 'Prozent Rechner Online: Prozente einfach, schnell und richtig berechnen – mit Rabatt, Preis, Bruch, Mehrwertsteuer, Dreisatz und Prozentrechnung.',
   canonicalUrl,
   schemaData
 }) {

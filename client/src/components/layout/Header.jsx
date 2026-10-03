@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { 
   Percent, 
@@ -232,7 +233,7 @@ export default function Header({ theme = 'light', toggleTheme }) {
       </div>
 
       {/* Mobile Navigation Drawer */}
-      {isMobileMenuOpen && (
+      {isMobileMenuOpen && typeof document !== 'undefined' && createPortal(
         <div 
           id="mobile-navigation-drawer" 
           className="mobile-drawer-overlay" 
@@ -360,7 +361,8 @@ export default function Header({ theme = 'light', toggleTheme }) {
               </Link>
             </nav>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </header>
   );
