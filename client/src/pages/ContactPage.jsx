@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import SEOHead from '../components/seo/SEOHead.jsx';
 import Breadcrumbs from '../components/layout/Breadcrumbs.jsx';
+import './ContactPage.css';
 
 export default function ContactPage() {
   const [name, setName] = useState('');
@@ -41,7 +42,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div style={{ maxWidth: '640px', margin: '0 auto' }}>
+    <div className="contact-page-container">
       <SEOHead
         title="Kontakt & Feedback - Prozent Rechner"
         description="Haben Sie Fragen, Wünsche zu neuen Rechnern oder Feedback? Schreiben Sie uns direkt über unser Kontaktformular."
@@ -50,12 +51,12 @@ export default function ContactPage() {
 
       <Breadcrumbs items={[{ label: 'Startseite', path: '/' }, { label: 'Kontakt' }]} />
 
-      <div className="card">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.5rem' }}>
-          <Mail size={24} style={{ color: 'var(--primary)' }} />
+      <div className="contact-card">
+        <div className="contact-header">
+          <Mail size={24} className="contact-header-icon" />
           <h1>Kontakt & Feedback</h1>
         </div>
-        <p style={{ marginBottom: '1.75rem', color: 'var(--text-muted)' }}>
+        <p className="contact-description">
           Haben Sie Vorschläge für neue Rechenfunktionen, einen Fehler entdeckt oder Feedback? Wir freuen uns über Ihre Rückmeldung.
         </p>
 
@@ -82,9 +83,9 @@ export default function ContactPage() {
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-            <div>
-              <label htmlFor="contact-name" style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.35rem' }}>
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="contact-form-group">
+              <label htmlFor="contact-name" className="contact-label">
                 Ihr Name (optional)
               </label>
               <input
@@ -93,13 +94,12 @@ export default function ContactPage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Max Mustermann"
-                className="custom-number-input"
-                style={{ height: '44px', fontSize: '0.95rem' }}
+                className="contact-input"
               />
             </div>
 
-            <div>
-              <label htmlFor="contact-email" style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.35rem' }}>
+            <div className="contact-form-group">
+              <label htmlFor="contact-email" className="contact-label">
                 Ihre E-Mail-Adresse (optional)
               </label>
               <input
@@ -108,30 +108,19 @@ export default function ContactPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="beispiel@domain.de"
-                className="custom-number-input"
-                style={{ height: '44px', fontSize: '0.95rem' }}
+                className="contact-input"
               />
             </div>
 
-            <div>
-              <label htmlFor="contact-type" style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.35rem' }}>
+            <div className="contact-form-group">
+              <label htmlFor="contact-type" className="contact-label">
                 Betreff / Kategorie
               </label>
               <select
                 id="contact-type"
                 value={type}
                 onChange={(e) => setType(e.target.value)}
-                style={{
-                  width: '100%',
-                  height: '44px',
-                  padding: '0 0.85rem',
-                  borderRadius: 'var(--border-radius-md)',
-                  border: '1.5px solid var(--border-color)',
-                  backgroundColor: 'var(--bg-input)',
-                  color: 'var(--text-main)',
-                  fontSize: '0.95rem',
-                  fontWeight: 600
-                }}
+                className="contact-select"
               >
                 <option value="general">Allgemeine Frage</option>
                 <option value="feature">Neuen Rechner vorschlagen</option>
@@ -140,9 +129,9 @@ export default function ContactPage() {
               </select>
             </div>
 
-            <div>
-              <label htmlFor="contact-message" style={{ display: 'block', fontSize: '0.9rem', fontWeight: 600, marginBottom: '0.35rem' }}>
-                Ihre Nachricht <span style={{ color: 'var(--accent-rose)' }}>*</span>
+            <div className="contact-form-group">
+              <label htmlFor="contact-message" className="contact-label">
+                Ihre Nachricht <span className="contact-required">*</span>
               </label>
               <textarea
                 id="contact-message"
@@ -151,22 +140,12 @@ export default function ContactPage() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Bitte beschreiben Sie Ihr Anliegen möglichst genau..."
-                style={{
-                  width: '100%',
-                  padding: '0.85rem',
-                  borderRadius: 'var(--border-radius-md)',
-                  border: '1.5px solid var(--border-color)',
-                  backgroundColor: 'var(--bg-input)',
-                  color: 'var(--text-main)',
-                  fontSize: '0.95rem',
-                  fontFamily: 'inherit',
-                  resize: 'vertical'
-                }}
+                className="contact-textarea"
               />
             </div>
 
             {status.state === 'error' && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--accent-rose)', fontSize: '0.9rem' }}>
+              <div className="contact-error-banner">
                 <AlertCircle size={16} />
                 <span>{status.message}</span>
               </div>
@@ -175,8 +154,7 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={status.state === 'submitting'}
-              className="btn btn-primary"
-              style={{ width: '100%', padding: '0.85rem' }}
+              className="btn btn-primary contact-submit-btn"
             >
               <Send size={16} />
               <span>{status.state === 'submitting' ? 'Wird gesendet...' : 'Nachricht absenden'}</span>
