@@ -93,6 +93,7 @@ const TABS = [
   {
     id: 'of',
     label: 'P% vom Grundwert',
+    shortLabel: 'P% von Wert',
     question: 'Wie viel sind _ % von _ ?',
     label1: 'Prozentsatz (p)',
     placeholder1: 'z. B. 25',
@@ -107,6 +108,7 @@ const TABS = [
   {
     id: 'is',
     label: 'Wie viel % sind X von Y?',
+    shortLabel: 'X von Y in %',
     question: 'Wie viel Prozent sind _ von _ ?',
     label1: 'Prozentwert / Teil (W)',
     placeholder1: 'z. B. 30',
@@ -121,6 +123,7 @@ const TABS = [
   {
     id: 'change',
     label: '% Veränderung',
+    shortLabel: '% Veränderung',
     question: 'Prozentuale Veränderung von _ auf _ ?',
     label1: 'Ausgangswert (Vorher)',
     placeholder1: 'z. B. 80',
@@ -249,7 +252,8 @@ export default function HomePage({ onSaveHistory }) {
                   className={`hp-calc-tab${activeTabId === tab.id ? ' hp-calc-tab--active' : ''}`}
                   onClick={() => handleTabSwitch(tab)}
                 >
-                  {tab.label}
+                  <span className="hp-tab-full">{tab.label}</span>
+                  <span className="hp-tab-short">{tab.shortLabel}</span>
                 </button>
               ))}
             </div>

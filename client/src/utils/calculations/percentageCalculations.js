@@ -34,13 +34,13 @@ export function calculatePercentageValue(percentage, base, decimals = 2) {
     isEmpty: false,
     result: rounded,
     formattedResult: formatted,
-    formula: 'Value = (Percentage / 100) × Base',
-    example: `What is ${p}% of ${b}? -> (${p} / 100) × ${b} = ${formatted}`,
+    formula: 'Prozentwert = (Prozentsatz / 100) × Grundwert',
+    example: `${p} % von ${b} -> (${p} / 100) × ${b} = ${formatted}`,
     steps: [
-      `Step 1: Convert percentage to decimal: ${p}% ÷ 100 = ${decimalFactor}`,
-      `Step 2: Multiply by base value: ${decimalFactor} × ${b} = ${formatted}`
+      `Schritt 1: Prozentsatz in Dezimalzahl umwandeln: ${p} % ÷ 100 = ${decimalFactor}`,
+      `Schritt 2: Mit dem Grundwert multiplizieren: ${decimalFactor} × ${b} = ${formatted}`
     ],
-    explanation: `${p}% of ${b} is equal to ${formatted}.`,
+    explanation: `${p} % von ${b} ist gleich ${formatted}.`,
     error: null
   };
 }
@@ -80,13 +80,13 @@ export function calculatePercentageRate(value, base, decimals = 2) {
     isEmpty: false,
     result: rounded,
     formattedResult: formatted,
-    formula: 'Percentage Rate = (Value / Base) × 100%',
-    example: `${v} of ${b} -> (${v} / ${b}) × 100% = ${formatted}`,
+    formula: 'Prozentsatz = (Prozentwert / Grundwert) × 100 %',
+    example: `${v} von ${b} -> (${v} / ${b}) × 100 % = ${formatted}`,
     steps: [
-      `Step 1: Divide the part value by base: ${v} ÷ ${b} = ${ratio}`,
-      `Step 2: Multiply by 100 to get rate: ${ratio} × 100 = ${formatted}`
+      `Schritt 1: Prozentwert durch Grundwert teilen: ${v} ÷ ${b} = ${ratio}`,
+      `Schritt 2: Mit 100 multiplizieren: ${ratio} × 100 = ${formatted}`
     ],
-    explanation: `${v} is ${formatted} of ${b}.`,
+    explanation: `${v} entspricht ${formatted} von ${b}.`,
     error: null
   };
 }
@@ -173,14 +173,14 @@ export function calculatePercentageIncrease(initialVal, finalVal, decimals = 2) 
     difference: roundToPrecision(diff, safeDecimals),
     formattedDifference: formattedDiff,
     formattedResult: formatted,
-    formula: 'Percentage Increase = ((Final - Initial) / |Initial|) × 100%',
-    example: `From ${v1} to ${v2} -> ((${v2} - ${v1}) / ${Math.abs(v1)}) × 100 = ${formatted}`,
+    formula: 'Prozentuale Veränderung = ((Endwert - Anfangswert) / |Anfangswert|) × 100 %',
+    example: `Von ${v1} auf ${v2} -> ((${v2} - ${v1}) / ${Math.abs(v1)}) × 100 = ${formatted}`,
     steps: [
-      `Step 1: Calculate absolute difference: ${v2} - ${v1} = ${formattedDiff}`,
-      `Step 2: Divide by initial value: ${formattedDiff} ÷ ${Math.abs(v1)} = ${roundToPrecision(diff / Math.abs(v1), 6)}`,
-      `Step 3: Multiply by 100: ${roundToPrecision(diff / Math.abs(v1), 6)} × 100 = ${formatted}`
+      `Schritt 1: Absolute Differenz berechnen: ${v2} - ${v1} = ${formattedDiff}`,
+      `Schritt 2: Durch den Anfangswert teilen: ${formattedDiff} ÷ ${Math.abs(v1)} = ${roundToPrecision(diff / Math.abs(v1), 6)}`,
+      `Schritt 3: Mit 100 multiplizieren: ${roundToPrecision(diff / Math.abs(v1), 6)} × 100 = ${formatted}`
     ],
-    explanation: `An increase from ${v1} to ${v2} represents a ${formatted} increase (difference: ${formattedDiff}).`,
+    explanation: `Eine Veränderung von ${v1} auf ${v2} entspricht ${formatted} (Differenz: ${formattedDiff}).`,
     error: null
   };
 }
@@ -220,14 +220,14 @@ export function calculatePercentageDecrease(initialVal, finalVal, decimals = 2) 
     difference: roundToPrecision(drop, safeDecimals),
     formattedDifference: formattedDrop,
     formattedResult: formatted,
-    formula: 'Percentage Decrease = ((Initial - Final) / |Initial|) × 100%',
-    example: `From ${v1} down to ${v2} -> ((${v1} - ${v2}) / ${Math.abs(v1)}) × 100 = ${formatted}`,
+    formula: 'Prozentuale Abnahme = ((Anfangswert - Endwert) / |Anfangswert|) × 100 %',
+    example: `Von ${v1} auf ${v2} -> ((${v1} - ${v2}) / ${Math.abs(v1)}) × 100 = ${formatted}`,
     steps: [
-      `Step 1: Calculate amount of drop: ${v1} - ${v2} = ${formattedDrop}`,
-      `Step 2: Divide by initial value: ${formattedDrop} ÷ ${Math.abs(v1)} = ${roundToPrecision(drop / Math.abs(v1), 6)}`,
-      `Step 3: Multiply by 100: ${roundToPrecision(drop / Math.abs(v1), 6)} × 100 = ${formatted}`
+      `Schritt 1: Differenz berechnen: ${v1} - ${v2} = ${formattedDrop}`,
+      `Schritt 2: Durch den Anfangswert teilen: ${formattedDrop} ÷ ${Math.abs(v1)} = ${roundToPrecision(drop / Math.abs(v1), 6)}`,
+      `Schritt 3: Mit 100 multiplizieren: ${roundToPrecision(drop / Math.abs(v1), 6)} × 100 = ${formatted}`
     ],
-    explanation: `A drop from ${v1} to ${v2} represents a ${formatted} reduction (difference: -${formattedDrop}).`,
+    explanation: `Eine Verringerung von ${v1} auf ${v2} entspricht einer Abnahme um ${formatted} (Differenz: -${formattedDrop}).`,
     error: null
   };
 }
