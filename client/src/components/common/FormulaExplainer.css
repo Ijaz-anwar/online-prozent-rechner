@@ -1,0 +1,96 @@
+.formula-explainer-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  margin-top: 1.25rem;
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.formula-explainer-card:hover {
+  border-color: var(--border-focus);
+}
+
+.formula-header-toggle {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card-subtle);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background var(--transition-fast);
+}
+
+.formula-header-toggle:hover {
+  background: var(--bg-hover);
+}
+
+.formula-header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.formula-icon {
+  color: var(--primary);
+}
+
+.formula-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.formula-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background: var(--bg-card-subtle);
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-md);
+  border-left: 4px solid var(--primary);
+}
+
+.formula-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.formula-code {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.steps-title {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.steps-ol {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.step-item {
+  font-size: 0.925rem;
+  color: var(--text-main);
+  line-height: 1.5;
+}

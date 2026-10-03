@@ -1,0 +1,62 @@
+.toc-container {
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  background: var(--bg-card-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+}
+
+.toc-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.toc-icon {
+  color: var(--primary);
+}
+
+.toc-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-main);
+}
+
+.toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.toc-item {
+  display: flex;
+}
+
+.toc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.toc-arrow {
+  opacity: 0.6;
+}
+
+.toc-link:hover {
+  color: var(--primary);
+  text-decoration: none;
+  transform: translateX(3px);
+}
+
+.toc-link:hover .toc-arrow {
+  opacity: 1;
+}

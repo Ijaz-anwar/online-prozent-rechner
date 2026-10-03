@@ -1,0 +1,389 @@
+/* ═══════════════════════════════════════════════════
+   VatCalculatorPage.css
+   Styles for the MwSt-Rechner (VAT Calculator) page
+   ═══════════════════════════════════════════════════ */
+
+/* ── Mode toggle ── */
+.vat-mode-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  background: var(--bg-card-subtle, #f5f7fa);
+  padding: 0.375rem;
+  border-radius: var(--border-radius-md, 10px);
+  border: 1px solid var(--border-color, #e0e4ec);
+}
+
+.vat-mode-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: calc(var(--border-radius-md, 10px) - 3px);
+  border: 2px solid transparent;
+  background: transparent;
+  color: var(--text-secondary, #6b7280);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  line-height: 1.2;
+}
+
+.vat-mode-btn svg {
+  flex-shrink: 0;
+}
+
+.vat-mode-btn small {
+  font-size: 0.7rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.vat-mode-btn:hover:not(.vat-mode-btn--active) {
+  background: var(--bg-card, #fff);
+  color: var(--text-primary, #1a202c);
+}
+
+.vat-mode-btn--active {
+  background: var(--color-primary, #3b82f6);
+  color: #fff;
+  border-color: var(--color-primary, #3b82f6);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
+}
+
+/* ── VAT rate fieldset ── */
+.vat-rate-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vat-rate-legend {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary, #1a202c);
+  margin-bottom: 0.6rem;
+}
+
+.vat-rate-presets {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.vat-preset-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  padding: 0.55rem 0.9rem;
+  border: 2px solid var(--border-color, #e0e4ec);
+  border-radius: var(--border-radius-md, 10px);
+  background: var(--bg-card, #fff);
+  color: var(--text-primary, #1a202c);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  font-size: 0.82rem;
+  text-align: left;
+  flex: 1;
+  min-width: 100px;
+}
+
+.vat-preset-btn strong {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.vat-preset-btn span {
+  font-size: 0.72rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+.vat-preset-btn:hover:not(.vat-preset-btn--active) {
+  border-color: var(--color-primary, #3b82f6);
+  background: var(--bg-card-subtle, #f5f7fa);
+}
+
+.vat-preset-btn--active {
+  border-color: var(--color-primary, #3b82f6);
+  background: var(--color-primary-light, #eff6ff);
+  color: var(--color-primary-dark, #1d4ed8);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.vat-preset-btn--active span {
+  color: var(--color-primary, #3b82f6);
+}
+
+.vat-custom-input {
+  margin-top: 0.75rem;
+}
+
+/* ── Formula preview ── */
+.vat-formula-preview {
+  background: var(--bg-code, #f1f5f9);
+  border: 1px solid var(--border-color, #e0e4ec);
+  border-radius: var(--border-radius-sm, 6px);
+  padding: 0.5rem 0.85rem;
+}
+
+.vat-formula-preview code {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.825rem;
+  color: var(--color-primary-dark, #1d4ed8);
+}
+
+/* ── Disclaimer ── */
+.vat-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background: var(--color-warning-bg, #fffbeb);
+  border: 1px solid var(--color-warning-border, #fde68a);
+  border-radius: var(--border-radius-md, 10px);
+  padding: 0.75rem 1rem;
+  color: var(--color-warning-text, #92400e);
+}
+
+.vat-disclaimer svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.vat-disclaimer p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.vat-disclaimer strong {
+  font-weight: 700;
+}
+
+/* ── Triple result grid ── */
+.vat-result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  padding: 1rem 0 0.25rem;
+}
+
+.vat-result-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 1rem 0.75rem;
+  background: var(--bg-card-subtle, #f5f7fa);
+  border: 2px solid var(--border-color, #e0e4ec);
+  border-radius: var(--border-radius-md, 10px);
+  text-align: center;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.vat-result-card--primary {
+  background: var(--color-primary-light, #eff6ff);
+  border-color: var(--color-primary, #3b82f6);
+  box-shadow: 0 2px 12px rgba(59, 130, 246, 0.15);
+}
+
+.vat-result-card__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.vat-result-card--primary .vat-result-card__label {
+  color: var(--color-primary, #3b82f6);
+}
+
+.vat-result-card__value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary, #1a202c);
+  line-height: 1.1;
+  word-break: break-all;
+}
+
+.vat-result-card--primary .vat-result-card__value {
+  font-size: 1.5rem;
+  color: var(--color-primary-dark, #1d4ed8);
+}
+
+.vat-result-card__sub {
+  font-size: 0.7rem;
+  color: var(--text-muted, #9ca3af);
+  margin-top: 0.1rem;
+}
+
+.vat-result-explanation {
+  grid-column: 1 / -1;
+  font-size: 0.82rem;
+  color: var(--text-secondary, #6b7280);
+  text-align: center;
+  margin: 0.25rem 0 0;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* ── Empty / error states ── */
+.vat-result-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 2rem 1rem;
+  color: var(--text-muted, #9ca3af);
+  text-align: center;
+}
+
+.vat-result-empty__icon {
+  opacity: 0.35;
+}
+
+.vat-result-empty p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.vat-result-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-error-bg, #fef2f2);
+  border: 1px solid var(--color-error-border, #fecaca);
+  border-radius: var(--border-radius-md, 10px);
+  color: var(--color-error, #dc2626);
+  font-size: 0.85rem;
+}
+
+.vat-result-error p {
+  margin: 0;
+}
+
+/* ── Steps section ── */
+.vat-steps-section {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+}
+
+.vat-steps-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary, #1a202c);
+  margin-bottom: 0.75rem;
+}
+
+.vat-steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  counter-reset: steps;
+}
+
+.vat-steps-list li {
+  counter-increment: steps;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border-color, #e0e4ec);
+  border-radius: var(--border-radius-sm, 6px);
+  font-size: 0.875rem;
+  color: var(--text-primary, #1a202c);
+  line-height: 1.5;
+}
+
+.vat-steps-list li::before {
+  content: counter(steps);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  background: var(--color-primary, #3b82f6);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Responsive: mobile ── */
+@media (max-width: 600px) {
+  .vat-mode-toggle {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .vat-mode-btn {
+    font-size: 0.78rem;
+    padding: 0.5rem 0.4rem;
+  }
+
+  .vat-result-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .vat-result-card--primary {
+    order: -1; /* Primary result first on mobile */
+  }
+
+  .vat-result-card__value {
+    font-size: 1.15rem;
+  }
+
+  .vat-result-card--primary .vat-result-card__value {
+    font-size: 1.3rem;
+  }
+
+  .vat-preset-btn {
+    min-width: 80px;
+  }
+}
+
+/* ── Dark mode ── */
+@media (prefers-color-scheme: dark) {
+  .vat-mode-toggle {
+    background: var(--bg-card-subtle);
+    border-color: var(--border-color);
+  }
+
+  .vat-preset-btn {
+    background: var(--bg-card);
+  }
+
+  .vat-result-card {
+    background: var(--bg-card);
+  }
+
+  .vat-result-card--primary {
+    background: rgba(59, 130, 246, 0.12);
+  }
+
+  .vat-formula-preview {
+    background: var(--bg-card-subtle);
+  }
+
+  .vat-disclaimer {
+    background: rgba(251, 191, 36, 0.1);
+    border-color: rgba(251, 191, 36, 0.25);
+    color: #d97706;
+  }
+
+  .vat-steps-list li {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+  }
+}
