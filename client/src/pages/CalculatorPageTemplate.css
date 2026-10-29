@@ -1,0 +1,110 @@
+/* ══════════════════════════════════════════════════════
+   CalculatorPageTemplate.css
+   Standalone calculator page layout styling
+   ══════════════════════════════════════════════════════ */
+
+.calc-template-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.5rem 0 3rem;
+  box-sizing: border-box;
+}
+
+.calc-page-header {
+  margin-bottom: 2rem;
+}
+
+.calc-page-header-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.calc-page-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--primary-light, #eff6ff);
+  color: var(--primary, #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid var(--primary-border, #bfdbfe);
+}
+
+.calc-page-title-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.calc-page-title {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800;
+  color: var(--text-main, #0f172a);
+  letter-spacing: -0.025em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.calc-page-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: var(--bg-hover, #f1f5f9);
+  color: var(--primary, #2563eb);
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+
+.calc-page-lead {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-muted, #64748b);
+  margin: 0.5rem 0 0;
+}
+
+.calculator-mount-slot {
+  margin-bottom: 2.5rem;
+}
+
+.calc-related-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color, #e2e8f0);
+}
+
+.calc-related-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main, #0f172a);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.calc-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .calc-template-page {
+    padding: 0 0.25rem 2rem;
+  }
+  .calc-page-header-top {
+    gap: 0.75rem;
+  }
+  .calc-page-icon-wrap {
+    width: 42px;
+    height: 42px;
+  }
+  .calc-related-grid {
+    grid-template-columns: 1fr;
+  }
+}

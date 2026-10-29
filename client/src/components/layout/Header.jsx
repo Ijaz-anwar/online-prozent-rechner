@@ -158,12 +158,12 @@ export default function Header({ theme = 'light', toggleTheme }) {
                   {calculatorsConfig.map((tool) => {
                     const ToolIcon = tool.icon;
                     return (
-                      <a
+                      <Link
                         key={tool.id}
-                        href={`/#tool-${tool.id}`}
+                        to={`/${tool.slug}`}
                         className="dropdown-menu-item"
                         role="menuitem"
-                        onClick={(e) => handleToolNavigate(tool.id, e)}
+                        onClick={() => setIsMoreToolsOpen(false)}
                       >
                         <div className="menu-item-icon-box" aria-hidden="true">
                           <ToolIcon size={17} />
@@ -172,7 +172,7 @@ export default function Header({ theme = 'light', toggleTheme }) {
                           <span className="menu-item-name">{tool.shortName}</span>
                           <span className="menu-item-desc">{tool.badge || tool.category}</span>
                         </div>
-                      </a>
+                      </Link>
                     );
                   })}
                 </div>
@@ -296,15 +296,15 @@ export default function Header({ theme = 'light', toggleTheme }) {
                     {calculatorsConfig.map((tool) => {
                       const SubIcon = tool.icon;
                       return (
-                        <a
+                        <Link
                           key={tool.id}
-                          href={`/#tool-${tool.id}`}
+                          to={`/${tool.slug}`}
                           className="mobile-sub-link"
-                          onClick={(e) => handleToolNavigate(tool.id, e)}
+                          onClick={() => setIsMobileMenuOpen(false)}
                         >
                           <SubIcon size={16} aria-hidden="true" />
                           <span>{tool.shortName}</span>
-                        </a>
+                        </Link>
                       );
                     })}
                   </div>

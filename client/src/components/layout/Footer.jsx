@@ -41,74 +41,74 @@ export default function Footer() {
             <h2 className="footer-heading">Wichtigste Rechner</h2>
             <ul className="footer-links">
               <li>
-                <Link to="/#tool-percentage-value" onClick={() => handleToolClick('percentage-value')}>
+                <Link to="/percentage-calculator">
                   Prozentwert (P% vom Grundwert)
                 </Link>
               </li>
               <li>
-                <Link to="/#tool-percentage-rate" onClick={() => handleToolClick('percentage-rate')}>
+                <Link to="/prozentsatz">
                   Prozentsatz (Wie viel % ist X von Y)
                 </Link>
               </li>
               <li>
-                <Link to="/#tool-rule-of-three" onClick={() => handleToolClick('rule-of-three')}>
+                <Link to="/dreisatz-prozentrechner">
                   Dreisatz Rechner Prozent
                 </Link>
               </li>
               <li>
-                <Link to="/#tool-percentage-to-decimal" onClick={() => handleToolClick('percentage-to-decimal')}>
+                <Link to="/prozent-in-dezimal">
                   Prozent in Dezimalzahl
                 </Link>
               </li>
               <li>
-                <Link to="/#tool-fraction-to-percentage" onClick={() => handleToolClick('fraction-to-percentage')}>
+                <Link to="/bruch-in-prozent">
                   Bruch in Prozent
                 </Link>
               </li>
               <li>
-                <Link to="/#tool-percentage-increase" onClick={() => handleToolClick('percentage-increase')}>
+                <Link to="/prozentuale-zunahme">
                   Prozentuale Steigerung (+%)
                 </Link>
               </li>
               <li>
-                <Link to="/#tool-percentage-decrease" onClick={() => handleToolClick('percentage-decrease')}>
+                <Link to="/prozentuale-abnahme">
                   Prozentuale Senkung (-%)
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Finance & Practical (Linked to Homepage) */}
+          {/* Col 3: Finance & Practical (Linked to Separate Pages) */}
           <div className="footer-col">
             <h2 className="footer-heading">Finanzen & Praxis</h2>
             <ul className="footer-links">
               <li>
-                <Link to="/#tool-price-percentage" onClick={() => handleToolClick('price-percentage')}>
+                <Link to="/preis-prozentrechner">
                   Preis Prozent Rechner
                 </Link>
               </li>
               <li>
-                <Link to="/#tool-percentage-euro" onClick={() => handleToolClick('percentage-euro')}>
+                <Link to="/prozent-euro-rechner">
                   Prozent Euro Rechner (€)
                 </Link>
               </li>
               <li>
-                <Link to="/#tool-gross-net-19" onClick={() => handleToolClick('gross-net-19')}>
+                <Link to="/brutto-netto-rechner-19">
                   Brutto Netto Rechner 19% MwSt
                 </Link>
               </li>
               <li>
-                <Link to="/#tool-discount-calculator" onClick={() => handleToolClick('discount-calculator')}>
+                <Link to="/rabatt-rechner">
                   Prozent Rabatt Rechner
                 </Link>
               </li>
               <li>
-                <Link to="/#tool-calculate-percentage-backwards" onClick={() => handleToolClick('calculate-percentage-backwards')}>
+                <Link to="/prozent-rueckwaerts-rechnen">
                   Prozent rückwärts rechnen
                 </Link>
               </li>
               <li>
-                <Link to="/#tool-percentage-difference" onClick={() => handleToolClick('percentage-difference')}>
+                <Link to="/prozentuale-differenz">
                   Prozentuale Differenz (|Δ|%)
                 </Link>
               </li>

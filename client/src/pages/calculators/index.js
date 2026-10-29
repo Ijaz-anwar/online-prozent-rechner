@@ -1,0 +1,13 @@
+export { default as PercentageValuePage } from './PercentageValuePage.jsx';
+export { default as PercentageRatePage } from './PercentageRatePage.jsx';
+export { default as PercentageIncreasePage } from './PercentageIncreasePage.jsx';
+export { default as PercentageDecreasePage } from './PercentageDecreasePage.jsx';
+export { default as PercentageBackwardsPage } from './PercentageBackwardsPage.jsx';
+export { default as PercentageDifferencePage } from './PercentageDifferencePage.jsx';
+export { default as PercentageEuroPage } from './PercentageEuroPage.jsx';
+export { default as FractionToPercentagePage } from './FractionToPercentagePage.jsx';
+export { default as GrossNet19Page } from './GrossNet19Page.jsx';
+export { default as DiscountCalculatorPage } from './DiscountCalculatorPage.jsx';
+export { default as PercentageToDecimalPage } from './PercentageToDecimalPage.jsx';
+export { default as RuleOfThreePage } from './RuleOfThreePage.jsx';
+export { default as PricePercentagePage } from './PricePercentagePage.jsx';
